@@ -7,7 +7,7 @@
 npm install @saber2pr/tsx
 
 # from github
-git clone ___
+git clone https://github.com/Saber2pr/tsx.git
 ```
 
 # Examples
