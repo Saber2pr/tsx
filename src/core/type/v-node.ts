@@ -8,5 +8,4 @@ export interface VNode<K extends keyof HTMLElementTagNameMap = any> {
   type: K
   props?: Partial<HTMLElementTagNameMap[K]>
   children?: Array<VNode<any>>
-  ref?: HTMLElement | Text
 }

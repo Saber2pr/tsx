@@ -1,6 +1,6 @@
 # @saber2pr/tsx
 
-> tsx renderer.
+> a tsx renderer for the browser and node.js
 
 ```bash
 # from npm
