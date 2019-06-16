@@ -1,13 +1,14 @@
-/*
- * @Author: saber2pr
- * @Date: 2019-06-15 22:30:54
- * @Last Modified by: saber2pr
- * @Last Modified time: 2019-06-15 23:04:02
- */
 import TSX, { renderDOM, renderString } from '..'
+import { useRef } from '../core'
 
 function HelloMessage({ name }) {
-  return <div>Hello {name}</div>
+  const ref = useRef<'div'>()
+
+  return (
+    <div ref={ref} onclick={() => (ref.current.style.color = 'blue')}>
+      Hello {name}
+    </div>
+  )
 }
 
 // browser

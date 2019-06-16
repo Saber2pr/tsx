@@ -1,3 +1,9 @@
+/*
+ * @Author: saber2pr
+ * @Date: 2019-06-16 11:28:02
+ * @Last Modified by:   saber2pr
+ * @Last Modified time: 2019-06-16 11:28:02
+ */
 import { VNode } from '../type'
 
 export function toVNode<K extends keyof HTMLElementTagNameMap>(

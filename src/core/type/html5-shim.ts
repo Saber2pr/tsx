@@ -1,9 +1,11 @@
 /*
  * @Author: saber2pr
- * @Date: 2019-06-15 22:31:33
+ * @Date: 2019-06-16 12:09:17
  * @Last Modified by:   saber2pr
- * @Last Modified time: 2019-06-15 22:31:33
+ * @Last Modified time: 2019-06-16 12:09:17
  */
+import { TSX } from './attributes'
+
 export interface HTML5Shim {
-  main: Partial<HTMLElementTagNameMap['div']>
+  main: TSX.IntrinsicAttributes<'div'>
 }

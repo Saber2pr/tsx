@@ -2,7 +2,7 @@
  * @Author: saber2pr
  * @Date: 2019-06-15 21:01:26
  * @Last Modified by: saber2pr
- * @Last Modified time: 2019-06-15 22:57:06
+ * @Last Modified time: 2019-06-16 13:25:02
  */
 import { VNode } from '../type/v-node'
 import { veryifyKey } from '../utils'
@@ -12,10 +12,11 @@ export function renderString(vnode: VNode | string = '') {
 
   const { type, props, children } = vnode
 
-  const attr = Object.entries(props).reduce(
-    (receiver, [k, v]) => receiver.concat(` ${veryifyKey(k)}="${v}"`),
-    ''
-  )
+  const attr = Object.entries(props).reduce((receiver, [k, v]) => {
+    if (typeof v !== 'string') return receiver
+
+    return receiver.concat(` ${veryifyKey(k)}="${v}"`)
+  }, '')
 
   return `<${type}${attr}>${children.map(renderString).join('')}</${type}>`
 }
