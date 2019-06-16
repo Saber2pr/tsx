@@ -9,15 +9,13 @@ export namespace TSX {
     current: HTMLElementTagNameMap[K]
   }
 
-  export interface VNodeAttributes<
-    K extends keyof HTMLElementTagNameMap = any
-  > {
-    ref: RefAttributes<K>
+  export interface VNodeAttributes {
+    ref: RefAttributes
   }
 
   export type Attributes<
     K extends keyof HTMLElementTagNameMap
-  > = HTMLElementTagNameMap[K] & TSX.VNodeAttributes<K>
+  > = HTMLElementTagNameMap[K] & TSX.VNodeAttributes
 
   export type IntrinsicAttributes<
     K extends keyof HTMLElementTagNameMap

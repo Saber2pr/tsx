@@ -1,23 +1,20 @@
-import TSX, { renderDOM, renderString } from '..'
-import { useRef } from '../core'
+import TSX, { renderDOM } from '..'
+import { useVM } from '../core'
+import { useStore } from '../core/hook/useState'
 
-function HelloMessage({ name }) {
-  const ref = useRef<'div'>()
+function Counter() {
+  // const [state, ref] = useVM({ count: 0 }, { count: 'innerHTML' })
+  const [store, ref] = useStore(1)
+  const [store2, ref2] = useStore('a')
 
   return (
-    <div ref={ref} onclick={() => (ref.current.style.color = 'blue')}>
-      Hello {name}
+    <div>
+      <span ref={ref}>{store.state}</span>
+      <span ref={ref2}>{store2.state}</span>
+      <button onclick={() => store.state++}>add</button>
+      <button onclick={() => (store2.state += 'a')}>add2</button>
     </div>
   )
 }
 
-// browser
-const dom = renderDOM(<HelloMessage name="Taylor" />)
-document.getElementById('root').append(dom)
-
-// node
-const html = renderString(<HelloMessage name="Taylor" />)
-console.log(html)
-
-// what's more
-// document.getElementById('root').innerHTML = html
+document.getElementById('root').append(renderDOM(<Counter />))
