@@ -2,9 +2,10 @@
  * @Author: saber2pr
  * @Date: 2019-06-15 20:46:31
  * @Last Modified by: saber2pr
- * @Last Modified time: 2019-06-16 15:07:09
+ * @Last Modified time: 2019-06-16 22:09:10
  */
-import { VNode } from '../type/v-node'
+import { VNode } from '../type'
+import { stringifyStyle } from '../utils'
 
 export function renderDOM<K extends keyof HTMLElementTagNameMap>(
   vnode: VNode<K> | string = ''
@@ -14,12 +15,12 @@ export function renderDOM<K extends keyof HTMLElementTagNameMap>(
   }
 
   const { type, props, children } = vnode
+  if (props.style) Reflect.set(props, 'style', stringifyStyle(props.style))
 
   const dom = Object.assign(document.createElement(type), props)
   props.ref && (props.ref.current = dom)
 
-  const childs = children.map(renderDOM)
-  dom.append(...childs)
+  dom.append(...children.map(renderDOM))
 
   return dom
 }

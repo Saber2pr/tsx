@@ -1,4 +1,3 @@
-export * from './hook'
 export * from './render'
 export * from './transform'
 export * from './type'

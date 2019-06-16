@@ -2,17 +2,18 @@
  * @Author: saber2pr
  * @Date: 2019-06-15 21:01:26
  * @Last Modified by: saber2pr
- * @Last Modified time: 2019-06-16 15:07:31
+ * @Last Modified time: 2019-06-16 22:09:43
  */
-import { VNode } from '../type/v-node'
-import { veryifyKey } from '../utils'
+import { VNode } from '../type'
+import { veryifyKey, stringifyStyle } from '../utils'
 
-export function renderString(vnode: VNode | string = '') {
+export function renderString(vnode: VNode | string = ''): string {
   if (typeof vnode === 'string' || typeof vnode === 'number') {
     return vnode
   }
 
   const { type, props, children } = vnode
+  if (props.style) Reflect.set(props, 'style', stringifyStyle(props.style))
 
   const attr = Object.entries(props).reduce((receiver, [k, v]) => {
     if (typeof v !== 'string') return receiver
