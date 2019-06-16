@@ -1,1 +1,1 @@
-import './test-children'
+import './test-map'
