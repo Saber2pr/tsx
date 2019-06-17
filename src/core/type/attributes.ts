@@ -2,9 +2,10 @@
  * @Author: saber2pr
  * @Date: 2019-06-16 22:14:39
  * @Last Modified by: saber2pr
- * @Last Modified time: 2019-06-16 22:15:13
+ * @Last Modified time: 2019-06-17 21:23:58
  */
 import { Override } from '../utils'
+import { CSSStyle } from './cssstyle'
 
 export namespace TSX {
   export type RefAttributes<K extends keyof HTMLElementTagNameMap = any> = {
@@ -21,7 +22,7 @@ export namespace TSX {
   export type Attributes<K extends keyof HTMLElementTagNameMap> = Override<
     HTMLElementTagNameMap[K],
     'style',
-    Partial<CSSStyleDeclaration>
+    CSSStyle
   > &
     TSX.VNodeAttributes<K>
 

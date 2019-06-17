@@ -1,2 +1,6 @@
+export * from './attributes'
+export * from './cssstyle'
+export * from './html5-shim'
+export * from './stylesheet'
 export * from './tsx'
 export * from './v-node'

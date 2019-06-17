@@ -21,3 +21,17 @@ function Page({ name }) {
 // node
 const html = renderString(<Page name="Taylor" />)
 console.log(html)
+
+console.log(
+  TSX.toStyleSheet({
+    '.test': {
+      color: 'red'
+    },
+    '.test>div': {
+      color: 'red'
+    },
+    '.test div': {
+      color: 'red'
+    }
+  })
+)
