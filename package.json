@@ -1,6 +1,6 @@
 {
   "name": "@saber2pr/tsx",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "> tsx renderer.",
   "repository": {
     "type": "git",
@@ -10,7 +10,8 @@
   "license": "ISC",
   "files": [
     "lib/core/*",
-    "lib/index.*"
+    "lib/index.*",
+    "lib/components/*"
   ],
   "main": "./lib/index.js",
   "scripts": {
