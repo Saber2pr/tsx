@@ -1,1 +1,1 @@
-import './test-renderString'
+import './test-tools'

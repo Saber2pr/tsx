@@ -1,4 +1,4 @@
-import TSX, { renderString, Style } from '..'
+import TSX, { renderString, Style, useStyle } from '..'
 
 function Page({ name }) {
   return (
@@ -13,6 +13,7 @@ function Page({ name }) {
       </head>
       <body>
         <div className="myTsx">myTsx</div>
+        <div className="myTsx2">myTsx2</div>
       </body>
     </html>
   )

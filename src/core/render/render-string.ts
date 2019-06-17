@@ -2,12 +2,11 @@
  * @Author: saber2pr
  * @Date: 2019-06-15 21:01:26
  * @Last Modified by: saber2pr
- * @Last Modified time: 2019-06-17 17:36:35
+ * @Last Modified time: 2019-06-17 22:00:44
  */
-import { VNode } from '../type'
 import { veryifyKey, veryifyStyle } from '../utils'
 
-export function renderString(vnode: VNode | string = ''): string {
+export function renderString(vnode: JSX.Element | string = ''): string {
   if (typeof vnode === 'string' || typeof vnode === 'number') {
     return vnode
   }
