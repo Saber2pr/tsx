@@ -2,6 +2,8 @@
 
 > a tsx renderer for the browser and node.js
 
+> 纯粹的视图层
+
 ```bash
 # from npm
 npm install @saber2pr/tsx

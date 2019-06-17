@@ -18,5 +18,7 @@ declare global {
     interface ElementChildrenAttribute {
       children: {}
     }
+
+    export import RefAttributes = TSX.RefAttributes
   }
 }

@@ -19,7 +19,7 @@ export namespace TSX {
     children: any
   }
 
-  export type Attributes<K extends keyof HTMLElementTagNameMap> = Override<
+  export type Attributes<K extends keyof HTMLElementTagNameMap = any> = Override<
     HTMLElementTagNameMap[K],
     'style',
     CSSStyle
