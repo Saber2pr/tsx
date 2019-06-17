@@ -15,6 +15,7 @@ export namespace TSX {
     K extends keyof HTMLElementTagNameMap = any
   > {
     ref: RefAttributes<K>
+    children: any
   }
 
   export type Attributes<K extends keyof HTMLElementTagNameMap> = Override<

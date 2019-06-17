@@ -1,18 +1,23 @@
-import TSX, { renderString } from '..'
+import TSX, { renderString, Style } from '..'
 
-function HelloMessage({ name }) {
+function Page({ name }) {
   return (
-    <div
-      className="testClassName"
-      id="testId"
-      onclick={() => {}}
-      style={{ color: 'red' }}
-    >
-      Hello {name}
-    </div>
+    <html>
+      <head>
+        <Style>
+          {{
+            '.myTsx': { color: 'blue' }
+          }}
+        </Style>
+        <title>{name}</title>
+      </head>
+      <body>
+        <div className="myTsx">myTsx</div>
+      </body>
+    </html>
   )
 }
 
 // node
-const html = renderString(<HelloMessage name="Taylor" />)
+const html = renderString(<Page name="Taylor" />)
 console.log(html)

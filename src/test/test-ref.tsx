@@ -1,5 +1,4 @@
-import TSX, { renderDOM } from '..'
-import { useRef } from '../core/hook/useRef'
+import TSX, { renderDOM, useRef } from '..'
 
 function HelloMessage() {
   let state = 0

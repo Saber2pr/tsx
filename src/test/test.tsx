@@ -1,1 +1,1 @@
-import './test-map'
+import './test-renderString'

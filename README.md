@@ -12,23 +12,46 @@ git clone https://github.com/Saber2pr/tsx.git
 
 # Examples
 
+## in browser.
+
 ```tsx
-import TSX, { renderDOM, renderString } from '@saber2pr/tsx'
+import TSX, { renderDOM } from '@saber2pr/tsx'
 
 function HelloMessage({ name }) {
   return <div>Hello {name}</div>
 }
 
-// browser
-const dom = renderDOM(<HelloMessage name="Taylor" />)
-document.getElementById('root').append(dom)
+// render to dom.
+document
+  .getElementById('root')
+  .append(renderDOM(<HelloMessage name="Taylor" />))
+```
 
-// node
-const html = renderString(<HelloMessage name="Taylor" />)
-console.log(html)
+## in node.js
 
-// what's more
-// document.getElementById('root').innerHTML = html
+```tsx
+import TSX, { renderString, Style } from '@saber2pr/tsx'
+
+function Page({ name }) {
+  return (
+    <html>
+      <head>
+        <Style>
+          {{
+            '.myTsx': { color: 'blue' }
+          }}
+        </Style>
+        <title>{name}</title>
+      </head>
+      <body>
+        <div className="myTsx">myTsx</div>
+      </body>
+    </html>
+  )
+}
+
+// render to string.
+console.log(renderString(<Page name="My Tsx" />))
 ```
 
 # tsx

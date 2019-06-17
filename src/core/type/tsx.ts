@@ -14,5 +14,9 @@ declare global {
       { [K in keyof HTMLElementTagNameMap]: TSX.IntrinsicAttributes<K> }
 
     interface Element extends VNode {}
+
+    interface ElementChildrenAttribute {
+      children: {}
+    }
   }
 }
