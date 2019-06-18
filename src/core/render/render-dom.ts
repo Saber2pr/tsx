@@ -2,9 +2,9 @@
  * @Author: saber2pr
  * @Date: 2019-06-15 20:46:31
  * @Last Modified by: saber2pr
- * @Last Modified time: 2019-06-17 22:11:10
+ * @Last Modified time: 2019-06-18 16:58:04
  */
-import { veryifyStyle } from '../utils'
+import { veryifyStyle, cleanObj } from '../utils'
 
 export function renderDOM(vnode?: string): Text
 export function renderDOM<K extends keyof HTMLElementTagNameMap>(
@@ -20,7 +20,7 @@ export function renderDOM<K extends keyof HTMLElementTagNameMap>(
 
   const { type, props, children } = veryifyStyle(vnode)
 
-  const dom = Object.assign(document.createElement(type), props)
+  const dom = Object.assign(document.createElement(type), cleanObj(props))
   props.ref && (props.ref.current = dom)
 
   dom.append(...children.map(renderDOM))
