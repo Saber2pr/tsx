@@ -1,7 +1,18 @@
-import TSX, { renderDOM } from '..'
+import TSX, { renderDOM, useEffect } from '..'
+import { useRef } from '../hook'
 
 function HelloMessage({ name }) {
-  return <div style={{ color: 'blue' }}>Hello {name}</div>
+  const ref = useRef<'div'>()
+
+  useEffect(() => {
+    ref.current.style.backgroundColor = 'black'
+  })
+
+  return (
+    <div ref={ref} style={{ color: 'blue' }}>
+      Hello {name}
+    </div>
+  )
 }
 
 // browser
