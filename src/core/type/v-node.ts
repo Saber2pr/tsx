@@ -12,5 +12,4 @@ export interface VNode<
   type: K
   props?: TSX.IntrinsicAttributes<K>
   children?: Array<VNode<any>>
-  ref?: HTMLElementTagNameMap[K]
 }
