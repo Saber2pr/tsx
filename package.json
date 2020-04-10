@@ -9,15 +9,10 @@
   "author": "saber2pr",
   "license": "ISC",
   "files": [
-    "lib/core/*",
-    "lib/index.*",
-    "lib/components/*",
-    "lib/hook/*",
-    "lib/tools/*"
+    "lib/index.*"
   ],
   "main": "./lib/index.js",
   "scripts": {
-    "test": "node ./lib/test/test.js",
     "start": "tsc --watch",
     "dev": "rollup -c --watch"
   },
