@@ -1,6 +1,6 @@
 import TSX, { render } from "./index"
 
-function Page({ name }) {
+function Page({ name }: { name: string }) {
   return (
     <html>
       <head>
@@ -26,4 +26,4 @@ function Page({ name }) {
   )
 }
 
-render(<Page name="test" />, document.body)
+render(<Page name={"test"} />, document.body)

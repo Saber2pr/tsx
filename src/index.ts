@@ -134,3 +134,32 @@ export type CSSStyle = Partial<CSSStyleDeclaration>
 type Override<T, K extends keyof T, V> = {
   [P in keyof T]: P extends K ? V : T[P]
 }
+
+export interface Microtask extends MutationCallback {}
+
+export function microtask(task: Microtask) {
+  if (
+    typeof process !== "undefined" &&
+    typeof process.nextTick === "function"
+  ) {
+    process.nextTick(task)
+  } else {
+    const observer = new MutationObserver(task)
+    const element = document.createTextNode("")
+    observer.observe(element, {
+      characterData: true
+    })
+    element.data = ""
+  }
+}
+
+export function useEffect(effect: Function) {
+  microtask(() => effect())
+}
+
+export function useRef<K extends keyof HTMLElementTagNameMap>(
+  current: HTMLElementTagNameMap[K] = null
+) {
+  const ref: TSX.Ref<K> = { current }
+  return ref
+}
